@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Math Exercise</title>    
+</head>
+    
+<body>
+<div id="math"></div>    
+<script>
+var add = Number(prompt("Give me a number"));
+
+var num = 10;
+var num2 = 20;
+var num3 = 50;
+var num4= 1568;
+
+var answer = "First Number: " + add;
+answer += "<br/>Second Number(+10): " + (add + num);
+answer += "<br/>Third Number(+20): " + (add + num + num2);
+answer += "<br/>Fourth Number(+50): " + (add + num + num2 + num3);
+answer += "<br/>Fifth Number(+1568): " + (add + num + num2 + num3 + num4);
+
+document.getElementById('math').innerHTML = answer;
+</script>
+</body>
+</html>
