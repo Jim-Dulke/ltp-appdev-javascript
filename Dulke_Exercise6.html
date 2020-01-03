@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Grades</title>
+</head>
+<body>
+<div id="output"></div>
+<script>
+    var names = [];
+    var theName = "";
+    while (theName != "XXX")
+    {
+        theName = prompt("Enter a name or XXX to Stop");
+        if(theName != "XXX"){
+            names.push(theName);
+        }
+    }
+    for(var x = 0; x < names.length; x++)
+    {
+        alert(names[x]);
+    }
+    document.getElementById('output').innerHTML = "Students: " + names;
+
+    
+var grades = new Array();
+var theGrade = "";
+
+do {
+    theGrade = Number(prompt("List GPA"));
+    grades.push(theGrade);
+}
+    while (grades.length < names.length);
+
+var CGP = grades.reduce((sum, current) => sum + current);
+var AVG = CGP/grades.length;
+
+
+document.getElementById('output').innerHTML = "Students: " + names;
+document.getElementById('output').innerHTML += "<br/>GPAs: " + grades.sort(function(a,b){return b-a});
+document.getElementById('output').innerHTML += "<br/>Highest GPA: " + Math.max(...grades);
+document.getElementById('output').innerHTML += "<br/>Lowest GPA: " + Math.min.apply(null, grades);
+document.getElementById('output').innerHTML += "<br/>Average GPA: " + AVG;
+
+var HR = new Array();
+for(g = 0; g < grades.length; g++) {
+        if(grades[g] > 3.4) {
+            HR.push(grades[g]);
+        }
+        
+}
+    if (HR.length >=1) {
+        document.getElementById('output').innerHTML += "<br/>Outstanding GPAs: " + HR;
+    }
+        else {
+        document.getElementById('output').innerHTML += "<br/>NO ONE MADE THE HONOR ROLL";
+    }
+</script>
+</body>
+</html>
+        
