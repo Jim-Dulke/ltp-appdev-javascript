@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Patterns</title>
+</head>
+<body>
+<div id="output"></div>
+<script>
+var star = "";
+        
+        for (var i=1; i <=10; i++) {
+            for (var j=1; j <=i; j++ ) {
+                star += "*";
+            }
+                star +="</br>";                
+        }
+    document.getElementById('output').innerHTML = star;
+    
+var star2 = "";
+    for (var k=9; k >=1; k--) {
+        for (var l=k; l >=1; l--) {
+        star2+= "*";
+        }
+    star2+= "</br>";
+    }
+    document.getElementById('output').innerHTML += star2;
+
+    </script>
+    <h1>Pattern B</h1>
+    <div id="output2"></div>
+    <script>
+    var star3 = "";
+
+        for (var n=0; n <=3; n++) {
+        
+        for (var m = 0; m <=5; m++) {
+            
+            star3 += "*_";
+        }
+            star3 += "</br>"
+    document.getElementById('output2').innerHTML = star3;
+        }
+
+</script>
+</body>
+</html>
+
+
