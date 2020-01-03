@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Calculator</title>    
+</head>
+<body>
+<div id="math"></div>
+<script>
+var num1 = Number(prompt("Give me a number"));
+var num2 = Number(prompt("Give me another number"));
+var result = "Sum: " + (num1 + num2);
+result += "<br/>Difference: " + (num1 - num2);
+result += "<br/>Product: " + (num1 * num2);
+result += "<br/>Equal To: " + (num1 === num2);
+result += "<br/>Less Than: " + (num1 < num2);
+result += "<br/>Remainder: " + (num1 % num2);
+document.getElementById('math').innerHTML = result; 
+</script>
+</body>
+</html>
