@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>Mad Libs</title>
+    </head>
+
+    <body>
+        <div id="output"></div>
+        <script>
+            var title = prompt("Dr./Mr./Mrs./Ms./Miss?");
+            var name = prompt("What is your full name?");
+            var verb1 = prompt("What do you like to do?");
+            var verb2 = prompt("What is another thing you like to do for fun?");
+            var verb3 = prompt("Name one more thing you like to do for fun.");
+            var adj1 = prompt("Name an adjective people would use to describe you");
+            var adj2 = prompt("Name another adjective people would use to describe you");
+            var adj3 = prompt("Name one more adjective people use to describe you.");
+            
+            var out = "Your name is " + title + " " + name + "."; 
+            out += "<br/>You like to " + verb1 + ", " + verb2 + ", and " + verb3 + ".";
+            out += "<br/>People describe you as " + adj1 + ", " + adj2 + ", and " + adj3 + ".";
+            
+            document.getElementById('output').innerHTML = out;         
+        </script>
+    </body>
+</html>
+    
