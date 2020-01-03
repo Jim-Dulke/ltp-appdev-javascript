@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> More Patterns</title>    
+</head>
+    
+<body>
+    <div id="out"></div>
+    
+    <script>
+    var star = "";
+    var c;
+    var col = Number(prompt("How many columns?"));
+    var star2 = "";
+    var r;
+    var row = Number(prompt("How many rows?"));
+    
+    for (c=0; c<col; c++) {
+        star+= "*";
+    }
+    for (r=0; r<row; r++){
+    star2 += star + "<br>";
+    }
+        
+        document.getElementById('out').innerHTML = star2;
+</script>
+</body>
+</html>
