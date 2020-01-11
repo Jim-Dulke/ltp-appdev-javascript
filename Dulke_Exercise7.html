@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>The Game</title>
+</head>
+<body>
+<div id="output"></div>
+<script src="Player.js">
+var player = {};
+        player.name = prompt("What is your name?");
+        player.livesLeft = 3;
+        player.score = 0;
+        player.speed = 0;
+        player.gridLocationX = 0;
+        player.gridLocationY = 0;
+
+player.welcome = function () {
+    alert("Welcome to the game " + player.name);
+}
+player.welcome();
+    
+var out = "Player Name: " + player.name + " ";
+out += "<br>Lives Left: " + player.livesLeft + " ";
+out += "<br>Score: " + player.score + " ";
+out += "<br>Speed: " + player.speed + " ";
+out += "<br>Current Location: " + player.gridLocationX + ", " + player.gridLocationY;
+    
+document.getElementById('output').innerHTML = out;
+</script>
+</body>
+</html>
