@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Floss Dance Exercise</title>
+</head>
+<body>
+<div id="output"></div>
+<script>
+let floss = {
+    a: prompt("Pick a piece of clothing"),
+    b: prompt("Pick a part of your body"),
+    c: prompt("Pick another part of your body"),
+    d: prompt("Give me a verb in base form"),
+    e: prompt("Pick a third part of your body"),
+    f: prompt("Give me a verb in base form"),
+    g: prompt("Give me a plural noun"),
+    h: prompt("Give me a plural noun"),
+    i: prompt("Give me a verb in base form")
+};
+    let HowTo = function(object){
+        let output = `How to do The Floss Dance<br/> 
+1 ) Put on some music<br/>  
+2 ) Put on a ${object.a} (optional)<br/>   
+3 ) Stand with your ${object.b} ever so slightly bent<br/>   
+4 ) Put your hands in fists<br/>   
+5 ) Place your ${object.c}, relaxed, at the side of your body<br/>   
+6 ) Begin to ${object.d} your ${object.e} left and right around your torso in the opposite direction to your hips<br/>   
+7 ) Keep doing it and increase speed and ${object.f} ${object.g} occasionally for effect
+After building confidence, you can also ${object.h} ${object.i} with your arms if desired, but this is not mandatory.`;
+        return output;
+    }
+document.getElementById('output').innerHTML = HowTo(floss);
+</script>
+</body>
+</html>
