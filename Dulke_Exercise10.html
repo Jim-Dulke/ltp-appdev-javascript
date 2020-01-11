@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Camp Wackadoo</title>    
+</head>
+<body>
+<div id="chores"></div>
+
+<script>
+let title = "<h1>Camp Wackadoo Tasks</h1>";
+let tasks = new Map([['Front Room Sweep', 'Jack'],
+                    ['Back Room Sweep', 'Jose'],
+                    ['Outside Grounds', 'Jim'],
+                    ['Clean Toilet', 'Johnny'],
+                    ['Clean Sink', 'Mary'],
+                    ['Trash Patrol and Supplies', 'Molly']
+            ]);
+    
+    document.getElementById('chores').innerHTML = title;
+    for (let [keys, values] of tasks.entries()) {
+    document.getElementById('chores').innerHTML += keys + ": " + values + "<br>";
+    }
+    
+
+</script>
+</body>
+</html>
