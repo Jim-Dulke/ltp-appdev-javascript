@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Exercise 8</title>    
+</head>
+<body>
+<div id="output"></div> 
+<script>
+        
+    let num1 = Number(prompt("Give me a number"));
+    let num2 = Number(prompt("Give me another number"));
+    let opera = prompt("Give me an operation");
+    var outcome;
+
+        function showResult() {
+        switch (opera)
+        {
+            case "+":
+                outcome = num1 + num2;
+                break;
+            case "-":
+                outcome = num1 - num2;
+                break;
+            case "*":
+                outcome = num1 * num2;
+                break;
+            case "/":
+                outcome = num1 / num2;
+                break;
+            
+        }
+        document.getElementById('output').innerHTML = outcome;
+    }
+    showResult();
+
+</script>
+     
+</body>
+</html>
+    
+    
+    
