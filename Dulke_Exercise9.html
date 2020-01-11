@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>To Do List</title>
+</head>
+
+<body>
+<div id="out"></div>
+
+<script>
+    
+function todo () {
+    let work = "<h1>TO-DO</h1>";
+    document.getElementById('out').innerHTML = work;
+}
+todo();
+
+function addtoDos() {
+let chores = "";
+let todoList = [];
+var i = 0;
+    
+for (i=0; i < 9; i++) {
+    chores += prompt("Give me a chore");
+    chores += todoList + "<br>";
+}
+document.getElementById('out').innerHTML += chores;
+}
+addtoDos();
+</script>
+</body>
+</html>
