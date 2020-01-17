@@ -1,26 +1,31 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-<title>Camp Wackadoo</title>    
+<title>Test</title>    
 </head>
 <body>
-<div id="chores"></div>
-
+<div id="tasks"></div>
 <script>
 let title = "<h1>Camp Wackadoo Tasks</h1>";
-let tasks = new Map([['Front Room Sweep', 'Jack'],
-                    ['Back Room Sweep', 'Jose'],
-                    ['Outside Grounds', 'Jim'],
-                    ['Clean Toilet', 'Johnny'],
-                    ['Clean Sink', 'Mary'],
-                    ['Trash Patrol and Supplies', 'Molly']
+document.getElementById('tasks').innerHTML = title;
+let nameone = prompt("Pick a camper to sweep the front room.");
+let nametwo  = prompt("Pick a camper to sweep the back room.");
+let namethree  = prompt("Pick a camper to manage the outside grounds.");
+let namefour  = prompt("Pick a camper to clean the toilet.");
+let namefive  = prompt("Pick a camper to clean the sink.");
+let namesix = prompt("Pick a camper to perform trash patrol and manage supplies.");
+let chores = new Map([['Front Room Sweep', nameone],
+                    ['Back Room Sweep', nametwo],
+                    ['Outside Grounds', namethree],
+                    ['Clean Toilet', namefour],
+                    ['Clean Sink', namefive],
+                    ['Trash Patrol and Supplies', namesix]
             ]);
     
-    document.getElementById('chores').innerHTML = title;
-    for (let [keys, values] of tasks.entries()) {
-    document.getElementById('chores').innerHTML += keys + ": " + values + "<br>";
+  
+    for (let [keys, values] of chores.entries()) {
+    document.getElementById('tasks').innerHTML += keys + ": " + values + "<br>";
     }
-    
-
 </script>
 </body>
 </html>
