@@ -15,12 +15,11 @@
     "N33", "N34", "N35", "N36", "N37", "N38", "N39", "N40", "N41", "N42", "N43", "N44", "N45", "G46", "G47", "G48",
     "G49", "G50", "G51", "G52", "G53", "G54", "G55", "G56", "G57", "G58", "G59", "G60",
     "O61", "O62", "O63", "O64", "O65", "O66", "O67", "O68", "O69", "O70", "O71", "O72", "O73", "O74", "O75"]);
-    let out = "NOW CALLING: ";
-    out += "<br>NUMBERS CALLED: "; 
-    document.getElementById('game').innerHTML = out;    
-    for (let value of numbers) document.getElementById('game').innerHTML += ("<br>" + value);
+    
+    const getRandomItem = numbers => numbers.get([...numbers.keys()][Math.floor(Math.random() * numbers.size)]);
+    console.log(getRandomItem);
     }
-        
+    
     function reset() {
         document.getElementById('game').innerHTML = "BINGO";
     }
