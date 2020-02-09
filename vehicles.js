@@ -9,18 +9,17 @@ class Vehicle {
             
             turnOn() { 
             this._engineStarted = true;
-            let turnOn = `STATUS: ON`;
+            let turnOn = console.log(`STATUS: ON`);
             return turnOn;
     }
-    
             turnOff() {
             if(this._currentSpeed > 0) {
-                                        let turnOff = `Your speed is ${this._currentSpeed} miles per hour. You cannot turn off your vehicle.`;
+                                        let turnOff = console.log(`Your speed is ${this._currentSpeed} miles per hour. You cannot turn off your vehicle.`);
                                         return turnOff;
                                     }
                 else {
                         this._engineStarted = false;
-                        let turnOff = `STATUS: OFF`;
+                        let turnOff = console.log(`STATUS: OFF`);
                         return turnOff;
                 }
         }
@@ -30,14 +29,14 @@ class Vehicle {
             if (this._engineStarted) {
                                         if (this._currentSpeed < this._topSpeed) {
                                         this._currentSpeed += 10;
-                                        let accelerate = `SPEED: ${this._currentSpeed}`;
+                                        let accelerate = console.log(`SPEED: ${this._currentSpeed}`);
                                         return accelerate;
                                         }
             
                 
                                         if(this._currentSpeed = this._topSpeed) {
                                         this._currentSpeed += 0;
-                                        let max = `MAX SPEED REACHED`;
+                                        let max = console.log(`MAX SPEED REACHED`);
                                         return max;
                                         }
         }
@@ -46,7 +45,7 @@ class Vehicle {
             brake() {
                         if (this._currentSpeed > 0) {
                         this._currentSpeed -= 10;
-                        let brake = `SPEED: ${this._currentSpeed}`;
+                        let brake = console.log(`SPEED: ${this._currentSpeed}`);
                         return brake;
                         }           
     }
@@ -55,13 +54,13 @@ class Vehicle {
             if (this._engineStarted) {
                             if (this._direction >=15 && this._direction <= 345) {
                             this._direction -= 15;
-                            let turnLeft = `BEARING: ${this._direction} degrees`;
+                            let turnLeft = console.log(`BEARING: ${this._direction} degrees`);
                             return turnLeft;
                         }
                         
                             if (this._direction = 359) {
                             this._direction -= 14;
-                            let turnLeft = `BEARING: ${this._direction} degrees`;
+                            let turnLeft = console.log(`BEARING: ${this._direction} degrees`);
                             return turnLeft;
                         } 
         }
@@ -71,20 +70,20 @@ class Vehicle {
                             if (this._engineStarted) {
                                 if (this._direction >= 0 && this._direction < 345) {
                                                             this._direction += 15;
-                                                            let turnRight = `BEARING: ${this._direction}`;
+                                                            let turnRight = console.log(`BEARING: ${this._direction}`);
                                                             return turnRight;
                                                 }
 
                                                 if (this._direction = 345) {
                                                                 this._direction += 14;
-                                                                let turnRight = `BEARING: ${this._direction}`;
+                                                                let turnRight = console.log(`BEARING: ${this._direction}`);
                                                                 return turnRight;
                                                 }
 
                                                 if (this._direction = 359) {
 
                                                                 this._direction += 0;
-                                                                let turnRight = `BEARING: ${this._direction}`;
+                                                                let turnRight = console.log(`BEARING: ${this._direction}`);
                                                                 return turnRight;
                                                                 }
                                 }
@@ -98,24 +97,23 @@ class bus extends Vehicle {
     }
     
     info() {
-                let info = `${this._color} bus w/ capacity of ${this._numberofSeats} `;
+                let info = console.log(`${this._color} bus w/capacity of ${this._numberofSeats}`);
                 return info;
     }
-    
     turnOn() { 
             this._engineStarted = true;
-            let turnOn = `STATUS: ON`;
+            let turnOn = console.log(`STATUS: ON`);
             return turnOn;
     }
     
     turnOff() {
                 if(this._currentSpeed > 0) {
-                    let turnOff = `Your speed is ${this._currentSpeed} miles per hour. You cannot turn off your vehicle.`;
+                    let turnOff = console.log(`Your speed is ${this._currentSpeed} miles per hour. You cannot turn off your vehicle.`);
                     return turnOff;
                 }
                 else {
                 this._engineStarted = false;
-                let turnOff = `STATUS: OFF`;
+                let turnOff = console.log(`STATUS: OFF`);
                 return turnOff;
             }
     }
@@ -125,13 +123,13 @@ class bus extends Vehicle {
                 if(this._engineStarted) {       
                 if (this._currentSpeed < this._topSpeed) {
                 this._currentSpeed += 10;
-                let accelerate = `SPEED: ${this._currentSpeed}`;
+                let accelerate = console.log(`SPEED: ${this._currentSpeed}`);
                 return accelerate;
                 }
             
             if(this._currentSpeed = this._topSpeed) {
             this._currentSpeed += 0;
-            let max = `MAX SPEED REACHED`;
+            let max = console.log(`MAX SPEED REACHED`);
             return max;
             }
                 }
@@ -141,7 +139,7 @@ class bus extends Vehicle {
     brake() {
         if (this._currentSpeed > 0) {
             this._currentSpeed -= 10;
-            let brake = `SPEED: ${this._currentSpeed}`;
+            let brake = console.log(`SPEED: ${this._currentSpeed}`);
             return brake;
         }
     }
@@ -152,13 +150,13 @@ class bus extends Vehicle {
                        
                         if (this._direction >=15 && this._direction <= 345) {
                             this._direction -= 15;
-                            let turnLeft = `BEARING: ${this._direction}`;
+                            let turnLeft = console.log(`BEARING: ${this._direction}`);
                             return turnLeft;
                         }
                         
                         if (this._direction = 359) {
                             this._direction -= 14;
-                            let turnLeft = `BEARING: ${this._direction}`;
+                            let turnLeft = console.log(`BEARING: ${this._direction}`);
                             return turnLeft;
                         } 
     }
@@ -168,13 +166,13 @@ turnRight () {
                     if (this._engineStarted) {
                                 if (this._direction >= 0 && this._direction < 345 ) {
                                                             this._direction += 15;
-                                                            let turnRight = `BEARING: ${this._direction}`;
+                                                            let turnRight = console.log(`BEARING: ${this._direction}`);
                                                             return turnRight;
                                                 }
 
                                                 if (this._direction = 345) {
                                                                 this._direction += 14;
-                                                                let turnRight = `BEARING: ${this._direction}`;
+                                                                let turnRight = console.log(`BEARING: ${this._direction}`);
                                                                 return turnRight;
 
                                                 }
@@ -182,7 +180,7 @@ turnRight () {
                                                 if (this._direction = 359) {
 
                                                                 this._direction -= 344;
-                                                                let turnRight = `BEARING: ${this._direction}`;
+                                                                let turnRight = console.log(`BEARING: ${this._direction}`);
                                                                 return turnRight;
                                                 }
                     }
@@ -193,7 +191,7 @@ set numberofSeats(cap) {
         this._numberofSeats = cap;
     }
     else {
-        alert("TOO MANY SEATS ON THE BUS. START KICKING PEOPLE OFF.");
+        console.log("TOO MANY SEATS ON THE BUS. START KICKING PEOPLE OFF.");
     }
 }
 }
@@ -206,31 +204,31 @@ class ambulance extends Vehicle {
 
     sirensOn() {
         if(this._engineStarted) {
-            let sirensOn = "THE SIRENS ARE ON.";
+            let sirensOn = console.log("THE SIRENS ARE ON.");
             return sirensOn;
         }
     }
     
     sirensOff() {
         this._sirens = false;
-        let sirensOff = "THE SIRENS ARE OFF.";
+        let sirensOff = console.log("THE SIRENS ARE OFF.");
         return sirensOff;
     }
     
     turnOn() { 
             this._engineStarted = true;
-            let turnOn = `STATUS: ON`;
+            let turnOn = console.log(`STATUS: ON`);
             return turnOn;
     }
     
     turnOff() {
                 if(this._currentSpeed > 0) {
-                    let turnOff = `Your speed is ${this._currentSpeed} miles per hour. You cannot turn off your vehicle.`;
+                    let turnOff = console.log(`Your speed is ${this._currentSpeed} miles per hour. You cannot turn off your vehicle.`);
                     return turnOff;
                 }
                 else {
                 this._engineStarted = false;
-                let turnOff = `STATUS: OFF`;
+                let turnOff = console.log(`STATUS: OFF`);
                 return turnOff;
             }
     }
@@ -240,13 +238,13 @@ class ambulance extends Vehicle {
                 if(this._engineStarted) {       
                 if (this._currentSpeed < this._topSpeed) {
                 this._currentSpeed += 10;
-                let accelerate = `SPEED: ${this._currentSpeed}`;
+                let accelerate = console.log(`SPEED: ${this._currentSpeed}`);
                 return accelerate;
                 }
             
             if(this._currentSpeed = this._topSpeed) {
             this._currentSpeed += 0;
-            let max = `MAX SPEED REACHED`;
+            let max = console.log(`MAX SPEED REACHED`);
             return max;
             }
             
@@ -256,7 +254,7 @@ class ambulance extends Vehicle {
     brake() {
         if (this._currentSpeed > 0) {
             this._currentSpeed -= 10;
-            let brake = `SPEED: ${this._currentSpeed}`;
+            let brake = console.log(`SPEED: ${this._currentSpeed}`);
             return brake;
         }
     }
@@ -267,13 +265,13 @@ class ambulance extends Vehicle {
                        
                         if (this._direction >=15 && this._direction <= 345) {
                             this._direction -= 15;
-                            let turnLeft = `BEARING: ${this._direction}`;
+                            let turnLeft = console.log(`BEARING: ${this._direction}`);
                             return turnLeft;
                         }
                         
                         if (this._direction = 359) {
                             this._direction -= 14;
-                            let turnLeft = `BEARING: ${this._direction}`;
+                            let turnLeft = console.log(`BEARING: ${this._direction}`);
                             return turnLeft;
                         } 
     }
@@ -283,13 +281,13 @@ turnRight () {
 if (this._engineStarted) {
                                 if (this._direction >= 0 && this._direction < 345 ) {
                                                             this._direction += 15;
-                                                            let turnRight = `BEARING: ${this._direction}`;
+                                                            let turnRight = console.log(`BEARING: ${this._direction}`);
                                                             return turnRight;
                                                 }
 
                                                 if (this._direction = 345) {
                                                                 this._direction += 14;
-                                                                let turnRight = `BEARING: ${this._direction}`;
+                                                                let turnRight = console.log(`BEARING: ${this._direction}`);
                                                                 return turnRight;
 
                                                 }
@@ -297,7 +295,7 @@ if (this._engineStarted) {
                                                 if (this._direction = 359) {
 
                                                                 this._direction -= 344;
-                                                                let turnRight = `BEARING: ${this._direction}`;
+                                                                let turnRight = console.log(`BEARING: ${this._direction}`);
                                                                 return turnRight;
                                                 }
                     }
