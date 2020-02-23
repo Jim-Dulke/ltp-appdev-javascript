@@ -6,7 +6,7 @@ var userList = {
        },
        {firstName: "Monica", lastName: "Taylor", dateOfBirth: 1975, spokenLanguages: {native: "Spanish", fluent: "English", intermediate: "French"} 
        },
-       {firstName: "Maurice", lastName: "Edelson", dateOfBirth: 1992, spokenLanguages: {native: "English", fluent: "Spanish",} 
+       {firstName: "Maurice", lastName: "Edelson", dateOfBirth: 1992, spokenLanguages: {native: "English", fluent: "Spanish"} 
        },
        
        {firstName: "Kelly", lastName: "Lang", dateOfBirth: 1982, spokenLanguages: {native: "English", fluent: "German", intermediate: "Dutch"} 
@@ -14,21 +14,15 @@ var userList = {
 ]
 };
 let {people} = userList;
-let [{firstName, lastName, dateOfBirth, spokenLanguages}] = people;
-let {native, fluent, intermediate} = spokenLanguages;
 
-people.forEach(staff);
     
-function staff() {
-for (people in userList) {
-document.getElementById('table').innerHTML = firstName;
-document.getElementById('table').innerHTML += "<br>" + lastName;
-document.getElementById('table').innerHTML += "<br>" + dateOfBirth;
-document.getElementById('table').innerHTML += "<br>" + native;
-document.getElementById('table').innerHTML += "<br>" + fluent;
-document.getElementById('table').innerHTML += "<br>" + intermediate;
-}
-}
-
-
+    for (i=0; i<people.length; i++) {
+    document.getElementById('table').innerHTML = people[i].firstName;
+    document.getElementById('table').innerHTML += "<br>";
+    document.getElementById('table').innerHTML += people[i].lastName;
+    document.getElementById('table').innerHTML += "<br>";
+    document.getElementById('table').innerHTML += people[i].dateOfBirth;
+    
+    }
+   
 </script>
