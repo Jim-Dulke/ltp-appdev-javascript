@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Promises</title>
+<style>
+    #math {
+            background: lightblue;
+            border: 5px solid red;
+    }    
+</style>
+</head>    
+
+
+<body>
+<form id="math">
+<h2>Height</h2>
+<input type="number" id="h">
+<br>
+<h2>Width</h2>
+<input type="number" id="w">
+<button onclick="area()">Click Me</button>
+<br>
+<input type="checkbox" id="gray">Grayscale
+</form>
+
+<div id="picture"></div>
+<script>
+let p1 = document.getElementById("h").value;
+let p2 = document.getElementById("w").value;
+let grayscale = document.querySelector("#gray");
+var img = null;
+    
+let imgPromise= new Promise(function(resolve, reject) { 
+img = new Image();
+img.addEventListener('load', resolve(img));
+img.addEventListener('error', reject('Could not load image'));
+img.width = p2;
+img.height = p1;
+if (grayscale.checked) {
+img.src = "https://picsum.photos/200/300?grayscale";
+}
+else {
+img.src = "https://picsum.photos/200/300/?random";
+}});
+    
+imgPromise.then(function(fromResolve){
+console.log("Look at this lovely image");
+let node = document.getElementById('picture');
+node.appendChild(img);
+}).catch(function(fromReject){console.log(fromReject)});
+
+</script>
+</body>
+</html>
