@@ -18,36 +18,42 @@
 <br>
 <h2>Width</h2>
 <input type="number" id="w">
-<button onclick="area()">Click Me</button>
+<button id="area">Click Me</button>
 <br>
 <input type="checkbox" id="gray">Grayscale
 </form>
 
 <div id="picture"></div>
+
 <script>
-let p1 = document.getElementById("h").value;
-let p2 = document.getElementById("w").value;
 let grayscale = document.querySelector("#gray");
 var img = null;
-    
+
+ 
+
+
+
 let imgPromise= new Promise(function(resolve, reject) { 
 img = new Image();
+img.src = "https://picsum.photos/200/300/?random";
+let w = img.getAttribute('width');
+let h = img.getAttribute('height');
+
+let icon = document.querySelector("#area");
 img.addEventListener('load', resolve(img));
 img.addEventListener('error', reject('Could not load image'));
-img.width = p2;
-img.height = p1;
-if (grayscale.checked) {
-img.src = "https://picsum.photos/200/300?grayscale";
-}
-else {
-img.src = "https://picsum.photos/200/300/?random";
-}});
+icon.addEventListener("click", () => {
+    img.setAttribute('height', h); 
+    img.setAttribute('width', w);
+})
+});
     
 imgPromise.then(function(fromResolve){
 console.log("Look at this lovely image");
 let node = document.getElementById('picture');
 node.appendChild(img);
 }).catch(function(fromReject){console.log(fromReject)});
+
 
 </script>
 </body>
