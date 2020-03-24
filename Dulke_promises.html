@@ -14,46 +14,37 @@
 <body>
 <form id="math">
 <h2>Height</h2>
-<input type="number" id="h">
+<input type="number" id="num1">
 <br>
 <h2>Width</h2>
-<input type="number" id="w">
+<input type="number" id="num2">
 <button id="area">Click Me</button>
 <br>
 <input type="checkbox" id="gray">Grayscale
 </form>
-
-<div id="picture"></div>
+<input type="image" src="https://picsum.photos/200/300/?random" width="200" height= "300" id="rando"> 
 
 <script>
-let grayscale = document.querySelector("#gray");
-var img = null;
-
- 
-
-
-
-let imgPromise= new Promise(function(resolve, reject) { 
-img = new Image();
-img.src = "https://picsum.photos/200/300/?random";
-let w = img.getAttribute('width');
-let h = img.getAttribute('height');
-
-let icon = document.querySelector("#area");
-img.addEventListener('load', resolve(img));
-img.addEventListener('error', reject('Could not load image'));
-icon.addEventListener("click", () => {
-    img.setAttribute('height', h); 
-    img.setAttribute('width', w);
-})
-});
+let image = document.querySelector('#rando');
+let w = image.getAttribute('width');
+let h = image.getAttribute('height');
     
-imgPromise.then(function(fromResolve){
-console.log("Look at this lovely image");
-let node = document.getElementById('picture');
-node.appendChild(img);
-}).catch(function(fromReject){console.log(fromReject)});
+let wide = document.getElementById('num2').value;
+let high = document.getElementById('num1').value;
+let btn = document.querySelector('#area');
 
+btn.addEventListener('click', () => {
+image.setAttribute('width', wide);
+image.setAttribute('height', high);
+});
+
+let imgPromise = new Promise(function(resolve, reject) {
+image.addEventListener('load', resolve("Look at this lovely image"));
+image.addEventListener('error', reject("Could not load"));
+});                           
+
+imgPromise.then(function(fromResolve) {  
+console.log(fromResolve)}.catch{function(fromReject){console.log(fromReject)}});
 
 </script>
 </body>
