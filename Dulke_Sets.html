@@ -7,11 +7,13 @@
 <body>
 <h1>Welcome to Bingo!</h1>
 <button id="select">Select</button>
+<button id="display">Display</button>
 <button id="reset">Reset</button>
 <div id="game"></div>
 <script>
     
     const s = document.getElementById('select');
+    const dis = document.getElementById('display');
     const res = document.getElementById('reset');
     
     let win = ""; //winning numbers that will be displayed at end of game
@@ -114,23 +116,24 @@
                 }
             }
         } else {
-            alert("GAME IS OVER. PLEASE RESET.");
-        }
-        
-    } //as the select button is clicked, numbers are transferred from the numbers set to the store set
+            alert("GAME IS OVER. PLEASE RESET."); 
+        }  
+    } 
+    //as the select button is clicked, numbers are transferred from the numbers set to the store set
+    
+    dis.onclick = function() {
+        document.getElementById('game').innerHTML = "Winning Numbers: ";
+        for (let value of store.values()) {
+        document.getElementById('game').innerHTML += value + ", "; 
+    }
+}
+//as the display button is clicked, winning numbers from game will be displayed
     
     res.onclick = function() {
-        if(store.size > 0) {
-            for(let called of store.values()) {
-                win += called + " , ";
-            }
-            win = win.replace(/,\s*$/, "");
-            document.getElementById('game').innerHTML = "Winning Numbers: " + win;
-        }
-        else {
-            alert("The game is not over. Please click Select to continue.");
-        }
-    } // at the end of the game, the winning numbers will be displayed once the reset button is clicked
+    document.getElementById('game').innerHTML = "NEW GAME";
+            call();
+    }
+//by using the call function on the reset button, you are able to start a new game with a full numbers set and an empty store set
 </script>    
 </body>
 </html>
