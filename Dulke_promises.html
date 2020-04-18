@@ -40,7 +40,7 @@ var imgPromise = function setUpPic(width, height, gray) {
 }
 
 area.addEventListener('click', function() {
-let gray = document.getElementById('gray').clicked;
+let gray = document.getElementById('gray').checked;
 let width = parseInt(document.getElementById('num1').value);
 let height = parseInt(document.getElementById('num2').value);
 imgPromise(width, height, gray).then(function(fromResolve){
