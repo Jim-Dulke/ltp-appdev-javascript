@@ -3,49 +3,55 @@
 <head>
 <title>Promises</title>
 <style>
-    #math {
-            background: lightblue;
-            border: 5px solid red;
-    }    
+    body {
+        background: darkblue;
+    }
 </style>
 </head>    
 
-
 <body>
-<form id="math">
-<h2>Height</h2>
-<input type="number" id="num1">
-<br>
 <h2>Width</h2>
-<input type="number" id="num2">
-<button id="area">Click Me</button>
+<input type="text" id="num1">
+<br>
+<h2>Height</h2>
+<input type="text" id="num2">
+
+<button id ="resize">Click Me</button>
 <br>
 <input type="checkbox" id="gray">Grayscale
-</form>
-<input type="image" src="https://picsum.photos/200/300/?random" width="200" height= "300" id="rando"> 
 
+
+<div id="pic"></div>
 <script>
-let image = document.querySelector('#rando');
-let w = image.getAttribute('width');
-let h = image.getAttribute('height');
-    
-let wide = document.getElementById('num2').value;
-let high = document.getElementById('num1').value;
-let btn = document.querySelector('#area');
+let area = document.getElementById('resize');
 
-btn.addEventListener('click', () => {
-image.setAttribute('width', wide);
-image.setAttribute('height', high);
+var imgPromise = function setUpPic(width, height, gray) {
+    return new Promise(function(resolve, reject) {
+    myImg= new Image();
+    myImg.addEventListener('load', resolve(myImg));
+    myImg.addEventListener('error', reject("Could not load"));
+    let imageSrc = `https://picsum.photos/${width}/${height}/?random`;
+        
+ if(gray) {
+     imageSrc = imageSrc + "&grayscale";
+ }
+    myImg.src = imageSrc;
+ });
+}
+
+area.addEventListener('click', function() {
+let gray = document.getElementById('gray').clicked;
+let width = parseInt(document.getElementById('num1').value);
+let height = parseInt(document.getElementById('num2').value);
+imgPromise(width, height, gray).then(function(fromResolve){
+    console.log("The image has loaded. Yay!");
+    let node = document.getElementById('pic');
+    node.appendChild(myImg);
+}).catch(function(fromReject) {
+    console.log(fromReject);
+}
+)
 });
-
-let imgPromise = new Promise(function(resolve, reject) {
-image.addEventListener('load', resolve("Look at this lovely image"));
-image.addEventListener('error', reject("Could not load"));
-});                           
-
-imgPromise.then(function(fromResolve) {  
-console.log(fromResolve)}.catch{function(fromReject){console.log(fromReject)}});
-
 </script>
 </body>
 </html>
